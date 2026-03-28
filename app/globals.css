@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Chance Global Styles (Platinum) ─────────────────── */
+
+/* Import Outfit font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-chance-dark text-chance-text;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(130, 141, 152, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(94, 154, 187, 0.05) 0%, transparent 40%),
+      radial-gradient(ellipse at 20% 60%, rgba(130, 141, 152, 0.03) 0%, transparent 40%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(130, 141, 152, 0.25);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(130, 141, 152, 0.45);
+  }
+}
+
+@layer components {
+  /* ── Glass surfaces ────────────────────────────────── 
+     Backgrounds kept dark to match original aesthetic.
+     backdrop-filter + borders ready for overlay-on-website UI.
+  ───────────────────────────────────────────────────── */
+
+  .glass {
+    background: rgba(255, 255, 255, 0.025);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 4px 30px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-elevated {
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow:
+      0 8px 40px rgba(0, 0, 0, 0.5),
+      0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-subtle {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  .glass-platinum {
+    background: rgba(130, 141, 152, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(130, 141, 152, 0.15);
+    box-shadow:
+      0 4px 30px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(130, 141, 152, 0.05),
+      inset 0 1px 0 rgba(168, 178, 189, 0.08);
+  }
+
+  /* Keep glass-gold for legendary-only elements */
+  .glass-gold {
+    background: rgba(212, 175, 55, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    box-shadow:
+      0 4px 30px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(212, 175, 55, 0.06),
+      inset 0 1px 0 rgba(212, 175, 55, 0.10);
+  }
+
+  /* ── Buttons ───────────────────────────────────────── */
+
+  .btn-platinum {
+    @apply px-6 py-3 rounded-xl font-semibold text-chance-dark;
+    background: linear-gradient(135deg, #717B85 0%, #A8B2BD 50%, #717B85 100%);
+    background-size: 200% auto;
+    transition: all 0.3s ease;
+  }
+  .btn-platinum:hover {
+    background-position: right center;
+    box-shadow: 0 0 30px rgba(130, 141, 152, 0.30);
+    transform: translateY(-1px);
+  }
+  .btn-platinum:active {
+    transform: translateY(0);
+  }
+
+  /* Keep btn-gold for legendary elements */
+  .btn-gold {
+    @apply px-6 py-3 rounded-xl font-semibold text-chance-dark;
+    background: linear-gradient(135deg, #d4af37 0%, #f0d060 50%, #d4af37 100%);
+    background-size: 200% auto;
+    transition: all 0.3s ease;
+  }
+  .btn-gold:hover {
+    background-position: right center;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    transform: translateY(-1px);
+  }
+  .btn-gold:active {
+    transform: translateY(0);
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 rounded-xl font-medium text-chance-text-dim;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+  }
+  .btn-ghost:hover {
+    @apply text-chance-text;
+    border-color: rgba(130, 141, 152, 0.25);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .text-platinum-glow {
+    @apply text-chance-platinum;
+    text-shadow: 0 0 12px rgba(130, 141, 152, 0.35);
+  }
+
+  .text-gold-glow {
+    @apply text-chance-gold;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
