@@ -42,7 +42,7 @@ export default function LandingPage() {
         background: BG,
       }}>
         <img
-          src="/landing/Group 2.jpg"
+          src="/landing/Group 2.png"
           alt=""
           style={{
             width: '100%',
