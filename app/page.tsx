@@ -83,7 +83,7 @@ export default function LandingPage() {
       <style>{`
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { background: #07070c; overflow-x: hidden; }
+        html, body { background: #07070c !important; overflow-x: hidden; overflow-y: auto !important; background-image: none !important; background-attachment: scroll !important; height: auto !important; min-height: 0 !important; }
       `}</style>
     </div>
   );
