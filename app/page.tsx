@@ -53,7 +53,7 @@ export default function LandingPage() {
 
       {/* ── Full-width scrollable background image ── */}
       <img
-        src="/landing/Group 2.png"
+        src="/landing/Group2.png"
         alt=""
         style={{
           width: '100%',
