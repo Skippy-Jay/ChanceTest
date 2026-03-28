@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 
 /* ─────────────────────────────────────────────────────────────────
    CHANCE — Landing Page (app/page.tsx)
-   Full-width scrollable background • C logo centre • C button at bottom
+   Full-width scrollable background • C logo top • C button at bottom
    NO nav • NO text • Skippy adds text via Figma
-   v6: Image locks to browser width, scrolls vertically, button at bottom
+   v7: Logo at top, scroll through image, button at bottom
    ──────────────────────────────────────────────────────────────── */
 
 var BG = '#07070c';
@@ -34,6 +34,23 @@ export default function LandingPage() {
   return (
     <div style={{ background: BG, overflowX: 'hidden', position: 'relative' }}>
 
+      {/* ── C logo at top of page ── */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        pointerEvents: 'none',
+        zIndex: 10,
+      }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 45% at 50% 50%, rgba(3,4,8,0.85) 0%, transparent 100%)', pointerEvents: 'none' }} />
+        <img src="/logo-c.png" alt="Chance" style={{ position: 'relative', width: 200, height: 200, objectFit: 'contain', opacity: heroVisible ? 1 : 0, transform: heroVisible ? 'translateY(0) scale(1)' : 'translateY(10px) scale(0.95)', transition: 'opacity 0.6s ease, transform 0.6s ease', filter: 'drop-shadow(0 4px 30px rgba(0,0,0,0.8))' }} />
+      </div>
+
       {/* ── Full-width scrollable background image ── */}
       <img
         src="/landing/Group 2.png"
@@ -45,7 +62,7 @@ export default function LandingPage() {
         }}
       />
 
-      {/* ── C button positioned at bottom of image ── */}
+      {/* ── C button at bottom of image ── */}
       <div style={{
         position: 'absolute',
         bottom: 40,
@@ -61,12 +78,6 @@ export default function LandingPage() {
           <div style={{ position: 'absolute', inset: '2px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(14,17,24,0.97), rgba(22,28,38,0.95))', zIndex: 1 }} />
           <img src="/logo-c.png" alt="Roll" style={{ position: 'relative', zIndex: 3, width: 44, height: 44, objectFit: 'contain', pointerEvents: 'none' }} />
         </button>
-      </div>
-
-      {/* ── C logo hero (centered in viewport, stays visible while scrolling) ── */}
-      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none', zIndex: 10 }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 45% at 50% 50%, rgba(3,4,8,0.85) 0%, transparent 100%)', pointerEvents: 'none' }} />
-        <img src="/logo-c.png" alt="Chance" style={{ position: 'relative', width: 200, height: 200, objectFit: 'contain', opacity: heroVisible ? 1 : 0, transform: heroVisible ? 'translateY(0) scale(1)' : 'translateY(10px) scale(0.95)', transition: 'opacity 0.6s ease, transform 0.6s ease', filter: 'drop-shadow(0 4px 30px rgba(0,0,0,0.8))' }} />
       </div>
 
       <style>{`
