@@ -57,6 +57,7 @@ export default function LandingPage() {
         alt=""
         style={{
           width: '100%',
+          maxWidth: '100vw',
           height: 'auto',
           display: 'block',
         }}
