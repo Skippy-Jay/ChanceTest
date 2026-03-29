@@ -36,8 +36,6 @@ export default function LandingPage() {
 
       {/* ── Scrollable background image — capped width, centered ── */}
       <div style={{
-        display: 'flex',
-        justifyContent: 'center',
         background: BG,
       }}>
         <img
