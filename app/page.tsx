@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
    CHANCE — Landing Page (app/page.tsx)
    Full-width scrollable background • C logo top • C button at bottom
    NO nav • NO text • Skippy adds text via Figma
-   v7: Logo at top, scroll through image, button at bottom
+   v8: Max-width capped, min-height 200vh so wide screens always scroll
    ──────────────────────────────────────────────────────────────── */
 
 var BG = '#07070c';
@@ -32,7 +32,28 @@ export default function LandingPage() {
   }
 
   return (
-    <div style={{ background: BG, overflowX: 'hidden', position: 'relative' }}>
+    <div style={{ background: BG, overflowX: 'hidden', position: 'relative', minHeight: '200vh' }}>
+
+      {/* ── Scrollable background image — capped width, centered ── */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        background: BG,
+      }}>
+        <img
+          src="/landing/group2.png"
+          alt=""
+          style={{
+            width: '100%',
+            maxWidth: 1200,
+            height: 'auto',
+            minHeight: '200vh',
+            objectFit: 'cover',
+            objectPosition: 'top center',
+            display: 'block',
+          }}
+        />
+      </div>
 
       {/* ── C logo at top of page ── */}
       <div style={{
@@ -51,19 +72,7 @@ export default function LandingPage() {
         <img src="/logo-c.png" alt="Chance" style={{ position: 'relative', width: 200, height: 200, objectFit: 'contain', opacity: heroVisible ? 1 : 0, transform: heroVisible ? 'translateY(0) scale(1)' : 'translateY(10px) scale(0.95)', transition: 'opacity 0.6s ease, transform 0.6s ease', filter: 'drop-shadow(0 4px 30px rgba(0,0,0,0.8))' }} />
       </div>
 
-      {/* ── Full-width scrollable background image ── */}
-      <img
-        src="/landing/Group2.png"
-        alt=""
-        style={{
-          width: '100%',
-          maxWidth: '100vw',
-          height: 'auto',
-          display: 'block',
-        }}
-      />
-
-      {/* ── C button at bottom of image ── */}
+      {/* ── C button at bottom of page ── */}
       <div style={{
         position: 'absolute',
         bottom: 40,
