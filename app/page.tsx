@@ -45,7 +45,6 @@ export default function LandingPage() {
           alt=""
           style={{
             width: '100%',
-            maxWidth: 1200,
             height: 'auto',
             minHeight: '200vh',
             objectFit: 'cover',
