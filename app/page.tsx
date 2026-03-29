@@ -52,22 +52,6 @@ export default function LandingPage() {
         />
       </div>
 
-      {/* ── C logo at top of page ── */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        pointerEvents: 'none',
-        zIndex: 10,
-      }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 45% at 50% 50%, rgba(3,4,8,0.85) 0%, transparent 100%)', pointerEvents: 'none' }} />
-        <img src="/logo-c.png" alt="Chance" style={{ position: 'relative', width: 200, height: 200, objectFit: 'contain', opacity: heroVisible ? 1 : 0, transform: heroVisible ? 'translateY(0) scale(1)' : 'translateY(10px) scale(0.95)', transition: 'opacity 0.6s ease, transform 0.6s ease', filter: 'drop-shadow(0 4px 30px rgba(0,0,0,0.8))' }} />
-      </div>
 
       {/* ── C button at bottom of page ── */}
       <div style={{
