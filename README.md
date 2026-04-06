@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/26322561/README.md)
 # 🎲 Chance — Curated Stumble Feed
 
 **Rediscover the internet. One roll at a time.**
